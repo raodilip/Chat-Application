@@ -1,4 +1,7 @@
-import logo from './logo.svg';
+import React, { useState } from "react";
+import FriendList from "./components/FriendList";
+import ChatWindow from "./components/ChatWindow";
+import { friends, chats } from "./data/mockdata";
 import './App.css';
 
 function App() {

@@ -1,5 +1,8 @@
 /* app.css */
 
+* {
+  box-sizing: border-box; /* Includes padding and border in width/height calculations */
+}
 /* Base light mode styles */
 body {
   font-family: Arial, sans-serif;
@@ -80,7 +83,7 @@ body {
   border-top: 1px solid #ccc;
 }
 
-.message-input input {
+.messageInput {
   flex: 1;
   padding: 10px;
   border: 1px solid #ccc;
@@ -138,6 +141,78 @@ body.dark-mode .message-input button:hover {
   background-color: #222;
 }
 
+/* Customize emoji picker styles */
+.emoji-picker-react {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: absolute; /* Adjust for placement */
+  z-index: 10;
+}
+
+/* Style the search input */
+.emoji-picker-react .emoji-search {
+  padding: 8px 10px 8px 30px; /* Space for search icon */
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Add a search icon */
+.emoji-picker-react .emoji-search::placeholder {
+  color: #aaa;
+}
+
+.emoji-picker-react .emoji-search:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.emoji-picker-react .emoji-search-wrapper {
+  position: relative;
+}
+
+.emoji-picker-react .emoji-search-wrapper::before {
+  content: "🔍"; /* Search icon */
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  pointer-events: none;
+}
+
+/* Ensure the emoji list is scrollable */
+.emoji-picker-react .emoji-scroll-wrapper {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* Dark mode background */
+body.dark-mode .emoji-picker-react {
+  background-color: #333 !important;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Emoji picker gradient */
+body.dark-mode .emoji-picker-react .emoji-color-picker {
+  background: linear-gradient(to right, #ff7e5f, #feb47b) !important;
+  border: none !important;
+}
+
+/* Search box in dark mode */
+body.dark-mode .emoji-picker-react .emoji-search {
+  background-color: #555 !important;
+  color: #fff !important;
+}
+
+body.dark-mode .emoji-picker-react .emoji-search::placeholder {
+  color: #aaa !important;
+}
+
 /* Base styles will remain unchanged, we add the following media queries */
 
 /* For screens with a max width of 768px (tablets and smaller devices) */
@@ -158,6 +233,41 @@ body.dark-mode .message-input button:hover {
     flex: 1;
     width: 100%;
     padding: 15px;
+    position: absolute;
+    bottom: 0px;
+  }
+
+  .message-input {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between elements */
+    padding: 10px;
+  }
+
+  .message-input input {
+    font-size: 14px;
+    flex : 1;
+    min-height: 40px;
+    padding: 16px;
+    resize:none;
+  }
+
+  .message-input button:first-of-type{
+    width: 40px;       /* Fixed width for emoji button */
+    height: 40px;      /* Keep it square */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin-left: 0px !important;
+  }
+
+  .message-input button:last-of-type{
+    width: 70px;       /* Fixed width for send button */
+    height: 40px;      /* Match emoji button height */
+    border: none;
+    margin-left: 0px !important;
   }
 
   .theme-toggle {
@@ -169,7 +279,7 @@ body.dark-mode .message-input button:hover {
 
   /* Adjust the message input for small screens */
   .message-input {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .message-input input {
@@ -177,9 +287,9 @@ body.dark-mode .message-input button:hover {
     margin-bottom: 10px;
   }
 
-  .message-input button {
+  /*.message-input button {
     width: 100%;
-  }
+  }*/
 
   .friend-item {
     padding: 12px;
@@ -188,6 +298,11 @@ body.dark-mode .message-input button:hover {
 
 /* For screens with a max width of 480px (smaller devices like phones) */
 @media (max-width: 480px) {
+  .messenger {
+    flex-direction: row;
+    height: auto; /* Allow the height to adjust based on content */
+  }
+
   .friend-list {
     padding: 10px;
   }
@@ -199,15 +314,41 @@ body.dark-mode .message-input button:hover {
 
   .chat-window {
     padding: 10px;
+    position: absolute;
+    bottom : 0px;
+  }
+
+  .message-input {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between elements */
+    padding: 10px;
   }
 
   .message-input input {
     font-size: 14px;
+    flex : 1;
+    min-height: 40px;
+    padding: 8px;
+    resize:none;
   }
 
-  .message-input button {
-    padding: 12px;
-    font-size: 14px;
+  .message-input button:first-of-type{
+    width: 40px;       /* Fixed width for emoji button */
+    height: 40px;      /* Keep it square */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin-left: 0px !important;
+  }
+
+  .message-input button:last-of-type{
+    width: 70px;       /* Fixed width for send button */
+    height: 40px;      /* Match emoji button height */
+    border: none;
+    margin-left: 0px !important;
   }
 
   .theme-toggle {

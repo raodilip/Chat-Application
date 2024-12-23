@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+```markdown
+# Chat Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple, responsive chat application built with React, featuring:
+- Light/Dark mode toggle.
+- Emoji support with an emoji picker.
+- Responsive design for mobile and desktop.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+1. **Responsive Design**: Optimized for various screen sizes, including desktop and mobile.
+2. **Dark/Light Mode**: Toggle between dark and light themes.
+3. **Emoji Support**: Add emojis to your messages via an integrated emoji picker.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: React.js
+- **Styling**: CSS
+- **Emoji Picker**: [emoji-picker-react](https://github.com/ealush/emoji-picker-react)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation and Setup
 
-### `npm test`
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/raodilip/Chat-Application.git
+   cd Chat-application
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-### `npm run build`
+3. Start the development server:
+   ```bash
+   npm start
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Open your browser and navigate to `http://localhost:3000`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How to Use
 
-### `npm run eject`
+1. **Send Messages**: Type a message in the input field and hit the "Send" button.
+2. **Switch Friends**: Click on a friend's name from the friend list to load the respective chat.
+3. **Toggle Themes**: Use the dark/light mode toggle button to switch themes.
+4. **Add Emojis**: Click the emoji button to open the emoji picker and select emojis for your messages.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Responsive Design
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Desktop Layout: Displays friend list and chat window side by side.
+- Mobile Layout: Displays either the friend list or chat window at a time, optimized for smaller screens.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Dependencies
 
-## Learn More
+- `react`: For building the user interface.
+- `emoji-picker-react`: For adding emoji support.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Unit Tests
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The project includes unit tests to ensure the core functionalities work as expected. The tests are written using **Jest** and **React Testing Library**.
 
-### Code Splitting
+### Tested Components and Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. **ChatWindow Component**
+   - Verifies that messages are rendered correctly in the chat window.
+   - Ensures new messages are added dynamically when sent.
 
-### Analyzing the Bundle Size
+2. **FriendList Component**
+   - Confirms that the friend list renders correctly with the provided data.
+   - Simulates clicking on a friend's name to load their chat.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3. **MessageInput Component**
+   - Checks that the input field updates correctly as the user types.
+   - Ensures the "Send" button calls the appropriate handler to send messages.
 
-### Making a Progressive Web App
+### Running the Tests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+To run the unit tests, use the following command:
 
-### Advanced Configuration
+```bash
+npm test
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Screenshots
 
-### Deployment
+### Light Mode
+![Light Mode Screenshot](./src/Assets/%20LightMode.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Dark Mode
+![Dark Mode Screenshot](./src/Assets/DarkMode.png)
+### Mobile Layout
+![Mobile Layout Screenshot](./src/Assets/MobileLayout.png)

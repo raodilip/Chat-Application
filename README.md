@@ -1,4 +1,3 @@
-```markdown
 # Chat Application
 
 A simple, responsive chat application built with React, featuring:

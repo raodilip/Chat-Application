@@ -22,7 +22,7 @@ A simple, responsive chat application built with React, featuring:
 1. Clone the repository:
    ```bash
    git clone https://github.com/raodilip/Chat-Application.git
-   cd Chat-application
+   cd Chat-Application
    ```
 
 2. Install dependencies:
